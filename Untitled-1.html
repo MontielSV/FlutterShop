@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Producto</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .card {
+      max-width: 350px;
+      background: #fff;
+      border-radius: 16px;
+      padding: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 12px;
+    }
+
+    h2 {
+      font-size: 18px;
+      margin: 12px 0 6px;
+    }
+
+    .price {
+      color: #5E4FFF;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .desc {
+      font-size: 14px;
+      color: #555;
+      margin-top: 6px;
+    }
+
+    .counter {
+      margin-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #f6f6f9;
+      padding: 12px;
+      border-radius: 12px;
+    }
+
+    .counter span {
+      font-size: 14px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .buttons {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn {
+      width: 32px;
+      height: 32px;
+      border: none;
+      border-radius: 50%;
+      background: #5E4FFF;
+      color: white;
+      font-size: 20px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .number {
+      font-size: 16px;
+      font-weight: bold;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <!-- Imagen única -->
+    <img src="https://media.sivasdescalzo.com/media/catalog/product/D/X/DX9070-386_sivasdescalzo-Nike-M_NL_HARRINGTON_JACKET_CORD-1684416380-2.jpg?width=640&q=70&optimize=high&format=auto" alt="Men's Harrington Jacket">
+
+    <!-- Nombre y precio -->
+    <h2>Men's Harrington Jacket</h2>
+    <p class="price">$148</p>
+    <p class="desc">
+      Built for life and made to last, this full-zip corduroy jacket is part of our Nike Life collection. 
+      The spacious fit gives you plenty of room to layer underneath, while the soft corduroy keeps it casual and timeless.
+    </p>
+
+    <!-- Contador -->
+    <div class="counter">
+      <span>Cantidad</span>
+      <div class="buttons">
+        <button class="btn" id="minus">−</button>
+        <span class="number" id="count">1</span>
+        <button class="btn" id="plus">+</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Obtener elementos
+    const minusBtn = document.getElementById("minus");
+    const plusBtn = document.getElementById("plus");
+    const count = document.getElementById("count");
+
+    let quantity = 1;
+
+    // Evento botón restar
+    minusBtn.addEventListener("click", () => {
+      if (quantity > 1) {
+        quantity--;
+        count.textContent = quantity;
+      }
+    });
+
+    // Evento botón sumar
+    plusBtn.addEventListener("click", () => {
+      quantity++;
+      count.textContent = quantity;
+    });
+  </script>
+</body>
+</html>
